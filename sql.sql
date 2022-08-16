@@ -86,11 +86,11 @@ Sname LIKE 'A%';
 
 # 2)Display all the Salesperson whose all orders worth is more than Rs. 2000.
 
-SELECT SalesPeople.Sname, (Orders.Amt)    
-FROM Orders
+SELECT SalesPeople.Sname, (corders.Amt)    
+FROM corders
 INNER JOIN SalesPeople
 ON
-SalesPeople.Snum= orders.Snum
+SalesPeople.Snum= corders.Snum
 WHERE Amt > 2000;
 
 
@@ -115,17 +115,17 @@ WHERE City = 'London''paris';
 
 # 5) Display the number of orders taken by each Salesperson and their date of orders.
  -- to find out the total number of orders by each salesperson
-SELECT SalesPeople.Snum, SalesPeople.Sname, Count(Orders.Onum) AS salesperson_total_orders       
+SELECT SalesPeople.Snum, SalesPeople.Sname, Count(corders.Onum) AS salesperson_total_orders       
 FROM SalesPeople
-INNER JOIN Orders
+INNER JOIN corders
 ON
-SalesPeople.Snum= orders.Snum;
-GROUP BYOrders.Snum;
+SalesPeople.Snum= corders.Snum;
+GROUP BYcorders.Snum;
 
 
 -- to find out the total number of orders for each date
-SELECT Odate, Count(Onum) AS total_orders        
-FROM Orders
+SELECT Odate, Count(Onum) AS total_corders        
+FROM corders
 GROUP BY Odate;
 
 
